@@ -1,5 +1,11 @@
+#!/bin/bash
 ## Ubuntu 16.04 only
 
+# Check if we have root
+if [ "$(id -u)" != "0" ]; then
+	echo "Need root for this."
+	exit 2
+fi
 ##install dependecies
 apt install openjdk-8-jdk*
 apt install maven
